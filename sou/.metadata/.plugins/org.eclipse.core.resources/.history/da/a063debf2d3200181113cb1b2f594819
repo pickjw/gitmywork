@@ -1,0 +1,22 @@
+package com.board.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.spring.support.SqlSessionDaoSupport;
+
+import com.board.domain.BoardCommand;
+
+public class BoardDaoImpl extends SqlSessionDaoSupport implements BoardDao {
+
+	public List<BoardCommand> list(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getRowCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

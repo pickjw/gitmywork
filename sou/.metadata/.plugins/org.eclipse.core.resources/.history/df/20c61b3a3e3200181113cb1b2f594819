@@ -1,0 +1,13 @@
+package com.board.controller;
+
+import java.util.*;//HashMap,List,Map~
+
+//메서드 호출 및 페이징 처리
+import com.board.dao.BoardDao; //list()
+import com.board.domain.BoardCommand;//DTO
+import com.board.util.PagingUtil; //페이징처리
+
+@Controller
+public class ListController {
+
+}

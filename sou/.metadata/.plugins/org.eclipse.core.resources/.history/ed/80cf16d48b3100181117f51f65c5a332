@@ -1,0 +1,15 @@
+package com.board.dao;
+
+//List(글목록보기),Map(검색어)
+import java.util.List;
+import java.util.Map;
+
+import com.board.domain.BoardCommand;
+
+public interface BoardDao {
+
+	//1.글목록보기(검색까지 구현)
+	public List<BoardCommand> list(Map<String,Object> map);//검색분야,검색어
+	//2.글갯수구하기(검색까지 구현)
+	public int getRowCount(Map<String,Object> map);
+}

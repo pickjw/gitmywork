@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- 연결시켜서 어떻게 불러올것인가를 지정(문자열 지정),파일지정 -->
+<tiles-definitions>
+    <definition name="index" 
+                     template="/WEB-INF/tiles-view/template/layout.jsp">
+        <put-attribute name="title" value="메인 페이지"/>
+        <put-attribute name="menu"  
+                               value="/WEB-INF/tiles-view/template/menu.jsp" />
+                               
+        <put-attribute name="header"  
+                               value="/WEB-INF/tiles-view/template/header.jsp" />
+                               
+        <put-attribute name="body"  
+                               value="/WEB-INF/tiles-view/body.jsp" /> 
+                               
+         <put-attribute name="footer"  
+                               value="/WEB-INF/tiles-view/template/footer.jsp" />                     
+    </definition>
+    <definition name="menu1" extends="index">
+        <put-attribute name="title" value="두번째페이지"/>
+        <put-attribute name="body"  
+                               value="/WEB-INF/tiles-view/body-menu1.jsp" /> 
+    </definition>
+    <definition name="menu2" extends="index">
+        <put-attribute name="title" value="세번째페이지"/>
+        <put-attribute name="body"  
+                               value="/WEB-INF/tiles-view/body-menu2.jsp" />
+    </definition>
+</tiles-definitions>

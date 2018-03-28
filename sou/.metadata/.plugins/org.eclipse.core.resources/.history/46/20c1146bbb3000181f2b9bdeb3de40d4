@@ -1,0 +1,27 @@
+package dr.mini.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class TestController {
+  
+	@RequestMapping("/hello.do")
+	public ModelAndView hello() {
+		System.out.println("TestController 호출됨!");
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("hello");//  /hello.jsp
+		mav.addObject("greeting",getGreeting());
+		return mav;
+	}
+	//시간에 따라서 인사말을 변경시키고 싶다.
+	private String getGreeting() {
+		System.out.println("getGreeting()호출됨!");
+	}
+}
+
+
+
+
+

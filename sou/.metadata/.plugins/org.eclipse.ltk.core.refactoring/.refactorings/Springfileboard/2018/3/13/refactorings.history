@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;util&apos; to &apos;com.board.util&apos;&#x0D;&#x0A;- Original project: &apos;Springfileboard&apos;&#x0D;&#x0A;- Original element: &apos;Springfileboard/src/main/java/util&apos;&#x0D;&#x0A;- Renamed element: &apos;Springfileboard/src/main/java/com.board.util&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;util&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;util" name="com.board.util" qualified="false" references="true" stamp="1522208608303" textual="false" version="1.0"/>
+</session>

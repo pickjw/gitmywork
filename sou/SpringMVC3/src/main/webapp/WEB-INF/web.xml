@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>SpringBoard</display-name>
+  
+    <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    </servlet>
+  
+  <!-- 요청명령어를 등록(*.do~) -->
+  <servlet-mapping>
+     <servlet-name>dispatcher</servlet-name>
+     <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 웹상에서의 한글처리해주는 클래스를 등록(캐릭터셋 지정(utf-8)  -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+      <init-param>
+         <param-name>encoding</param-name>
+         <param-value>UTF-8</param-value>
+      </init-param>
+  </filter>
+  
+  <!-- 어떻게 요청을 할때 필터를 적용 -->
+  <filter-mapping>
+         <filter-name>encodingFilter</filter-name>
+         <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+</web-app>
+
+
+
+

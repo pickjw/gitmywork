@@ -1,0 +1,5 @@
+package kr.spring.tiles.controller;
+
+public class IndexController {
+
+}

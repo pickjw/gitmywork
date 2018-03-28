@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+       
+<!-- @Autowired 사용을 위해 -->
+    <context:annotation-config/> 
+    <bean class="com.board.dao.BoardDaoImpl" />
+    <bean class="com.board.controller.ListController" />
+    
+    
+ 
+    <!-- tiles (ViewResolver)설정 -->
+    <bean id="tilesConfigurer" 
+      class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/tiles-def/tilesdef.xml</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="viewResolver" 
+     class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass"
+         value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+        <property name="order" value="1"/>
+    </bean>
+    
+    <!-- 리소스번들(외부에서 파일의 정보)
+           (1.DB파일 2.웹상에서 특정문자열(에러메세지) 유효성검사메세지
+            messages.label(패키지명.불러올 파일명) properties -->
+    <bean id="messageSource" 
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+	        <list>
+	            <value>messages.label</value>
+	            <value>messages.validation</value>
+	        </list>
+        </property>
+    </bean>
+    
+    <!-- 예외가 발생이 되었을때 처리해주는 예외페이지를 지정 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.Exception">pageError</prop>
+            </props>
+        </property>
+    </bean>
+    
+    
+ 
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

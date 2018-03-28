@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!--  DB접속이 된 후 불러올 테이블의 정보(필드,자료형,별칭 부여유무)-->
+<configuration>
+
+   <!-- 매개변수,반환형의 자료형의 긴이름을 짧게 표현하고 싶을때 별칭부여 -->
+	<typeAliases>
+	    <typeAlias alias="BoardCommand" 
+	                    type="com.board.domain.BoardCommand"/>
+	</typeAliases>
+	
+	<mappers>
+	    <mapper resource="com/board/dao/BoardMapper.xml"/>
+	</mappers>
+</configuration>
+
+
